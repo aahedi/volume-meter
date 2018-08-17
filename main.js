@@ -65,7 +65,7 @@ window.onload = function() {
     }
 */
 	// Attempt to get system audio
-var audioSrc = audioContext.createMediaElementSource( document.getElementByID("my_source") );
+var audioSrc = audioContext.createMediaElementSource(document.getElementById("my_source"));
 
 audioSrc.connect( audioContext.destination );  // you need to connect it to output, or it won't play
 // Create a new volume meter and connect it.
