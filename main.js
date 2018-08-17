@@ -71,7 +71,7 @@ audioSrc.connect( audioContext.destination );  // you need to connect it to outp
 // Create a new volume meter and connect it.
 meter = createAudioMeter(audioContext);
 audioSrc.connect(meter);
-	
+ drawLoop();	
 }
 
 
