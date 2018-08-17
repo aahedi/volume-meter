@@ -40,7 +40,7 @@ window.onload = function() {
     audioContext = new AudioContext();
 
     // Attempt to get audio input
-    try {
+/*    try {
         // monkeypatch getUserMedia
         navigator.getUserMedia = 
         	navigator.getUserMedia ||
@@ -63,7 +63,15 @@ window.onload = function() {
     } catch (e) {
         alert('getUserMedia threw exception :' + e);
     }
+*/
+	// Attempt to get system audio
+var audioSrc = audioContext.createMediaElementSource( document.getElementByID("my_source") );
 
+audioSrc.connect( audioContext.destination );  // you need to connect it to output, or it won't play
+// Create a new volume meter and connect it.
+meter = createAudioMeter(audioContext);
+audioSrc.connect(meter);
+	
 }
 
 
